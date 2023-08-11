@@ -8,8 +8,11 @@ import SignUp from './SignUp';
 
 const page = () => {
   
-
+  return(
+    <>
   <SignUp/>
+  </>
+  )
 // const router = useRouter();
 //   const [formData, setFormData] = useState({
 //     email: '',

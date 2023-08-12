@@ -10,7 +10,7 @@ export async function GET()
 
         // response.cookies.delete("token");
         
-        response.cookies.set("token"," ",{
+        response.cookies.set('token','',{
             httpOnly:true,
             // expires: new Date(0)
         });

@@ -15,25 +15,20 @@
       
         try {
           
-          const res = await fetch('/api/auth/web2logout') 
-          console.log("API FETCHED DATA: " + res );
+           await axios.post('/api/auth/web2logout') 
+          // console.log("API FETCHED DATA: " + res );
           
           
-          if(res.ok)
-          {
             
-            console.log('API Response:', res);
+          // console.log('API Response:', res);
             // console.log();
-            const responseData = await res.json();
-            console.log("API FETCHED DATA.DATA: " + responseData);
-          if(responseData.success) 
+          // const responseData = await res.json();
+          // console.log("API FETCHED DATA.DATA: " + responseData); 
           toast.success("Logging Out")
           router.push("/comp/signin")
-          }
-          else {
-            console.log("There is some issue with API FETCH!");
+          // console.log("There is some issue with API FETCH!");
             
-          }
+          
       
       
         } catch (error) {

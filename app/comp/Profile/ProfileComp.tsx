@@ -15,9 +15,25 @@ const ProfileComp = () => {
     
       try {
         
-        await axios.get('/api/auth/web2logout')
+        const res = await fetch('/api/auth/web2logout') 
+        console.log("API FETCHED DATA: " + res );
+        console.log("API FETCHED DATA.DATA: " + res.json);
+        
+
+        if(res.ok)
+        {
+          
+        console.log('API Response:', res);
+        // console.log();
+        const responseData = await res.json();
+        if(responseData.success) 
         toast.success("Logging Out")
         router.push("/comp/signin")
+        }
+        else {
+          console.log("There is some issue with API FETCH!");
+          
+        }
     
     
       } catch (error) {

@@ -65,13 +65,13 @@ import type { NextRequest } from 'next/server'
 export function middleware(request: NextRequest) {
   const path = request.nextUrl.pathname
 
-  const isPublic = path === '/comp/signin' || path === '/comp/signup'
+  const isPublic = path === '/signin' || path === '/signup'
 
   const token = request.cookies.get('token')?.value || '';
 
   if(isPublic && token || token && path === '/')
   {
-    return NextResponse.redirect(new URL('/comp/Profile',request.nextUrl))
+    return NextResponse.redirect(new URL('/Profile',request.nextUrl))
   }
 
   if(!isPublic && !token && path !== '/')
@@ -87,9 +87,9 @@ export function middleware(request: NextRequest) {
 export const config = {
   matcher: [
     '/',
-    '/comp/Profile',
-    '/comp/signup',
-    '/comp/signin'
+    '/Profile',
+    '/signup',
+    '/signin'
 
   ],
 }

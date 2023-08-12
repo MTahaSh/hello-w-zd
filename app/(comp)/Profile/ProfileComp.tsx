@@ -25,7 +25,7 @@
           // const responseData = await res.json();
           // console.log("API FETCHED DATA.DATA: " + responseData); 
           toast.success("Logging Out")
-          router.push("/comp/signin")
+          router.push("/signin")
           // console.log("There is some issue with API FETCH!");
             
           
